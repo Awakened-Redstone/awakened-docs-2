@@ -7,12 +7,10 @@
     "gen": "bun ./.vitepress/generateIconsFile.ts && bun ./.vitepress/createOverlyLargeCssFile.ts && bun ./.vitepress/genRobotsTxt.ts",
     "lint": "eslint . && prettier --check .",
     "fix": "eslint . --fix && prettier --write .",
-    "dev": "vitepress dev --port 3000",
-    "build": "vitepress build",
-    "serve": "vitepress serve",
-    "docs:dev": "vitepress dev docs --port 3000",
-    "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress previe docsw"
+    "dev": "vitepress dev docs --port 3000",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "preview": "vitepress previe docsw"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
