@@ -9,6 +9,7 @@
 @source "../../../docs/.vitepress/theme/component/VPNavBarMenu.vue";
 @source "../../../docs/.vitepress/theme/component/VPNavScreenMenu.vue";
 @source "../../../docs/.vitepress/theme/extension/DocsLayout.vue";
+@source "../../../docs/minecraft/default-components/index.md";
 @source "../../../docs/minecraft/autowhitelist/install.md";
 @source "../../../docs/minecraft/autowhitelist/index.md";
 @source "../../../docs/minecraft/autowhitelist/geyser.md";
