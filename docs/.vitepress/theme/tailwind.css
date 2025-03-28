@@ -1,0 +1,20 @@
+@theme {
+  --color-vp-bg: var(--vp-c-bg);
+  --color-vp-bg-alt: var(--vp-c-bg-alt);
+  --color-vp-bg-elv: var(--vp-c-bg-elv);
+  --color-vp-bg-soft: var(--vp-c-bg-soft);
+  --color-border: var(--vp-c-border);
+
+  --color-vp-warning-1: var(--vp-c-warning-1);
+  --color-vp-warning-2: var(--vp-c-warning-2);
+  --color-vp-warning-3: var(--vp-c-warning-3);
+  --color-vp-warning-soft: var(--vp-c-warning-soft);
+
+  --color-vp-danger-1: var(--vp-c-danger-1);
+  --color-vp-danger-2: var(--vp-c-danger-2);
+  --color-vp-danger-3: var(--vp-c-danger-3);
+  --color-vp-danger-soft: var(--vp-c-danger-soft);
+
+  --color-bg-soft: var(--mp-c-bg-soft);
+  --color-bg-alt: var(--mp-c-bg-alt);
+}

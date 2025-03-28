@@ -1,0 +1,50 @@
+diff --git a/node_modules/vitepress/.bun-tag-8d0de57aaef1c69a b/.bun-tag-8d0de57aaef1c69a
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/node_modules/vitepress/.bun-tag-af03a2a8f93adfc0 b/.bun-tag-af03a2a8f93adfc0
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/dist/client/theme-default/styles/components/vp-doc.css b/dist/client/theme-default/styles/components/vp-doc.css
+index 8999118418b53f9e56667d0d84f98bfdce1930d8..2974047a17928c650771b6ac7678339f5696a2a6 100644
+--- a/dist/client/theme-default/styles/components/vp-doc.css
++++ b/dist/client/theme-default/styles/components/vp-doc.css
+@@ -91,7 +91,7 @@
+  * Paragraph and inline elements
+  * -------------------------------------------------------------------------- */
+ 
+-.vp-doc p,
++.vp-doc p:not(.no-margin),
+ .vp-doc summary {
+   margin: 16px 0;
+ }
+diff --git a/dist/node/chunk-Zsoi3j4v.js b/dist/node/chunk-Zsoi3j4v.js
+index 8cfe39e30b9e866566716751deb57a58555b7bf8..bff2ec4038374831f7b8114ef4a96a67e6ae8d19 100644
+--- a/dist/node/chunk-Zsoi3j4v.js
++++ b/dist/node/chunk-Zsoi3j4v.js
+@@ -35726,7 +35726,7 @@ async function createMarkdownRenderer(srcDir, options = {}, base = "/", logger =
+   if (options.preConfig) {
+     options.preConfig(md);
+   }
+-  md.use(componentPlugin, { ...options.component }).use(highlightLinePlugin).use(preWrapperPlugin, { codeCopyButtonTitle, hasSingleTheme }).use(snippetPlugin, srcDir).use(containerPlugin, { hasSingleTheme }, options.container).use(imagePlugin, options.image).use(
++  md.use(componentPlugin, { ...options.component }).use(highlightLinePlugin).use(preWrapperPlugin, { codeCopyButtonTitle, hasSingleTheme }).use(snippetPlugin, srcDir).use(imagePlugin, options.image).use(
+     linkPlugin,
+     { target: "_blank", rel: "noreferrer", ...options.externalLinks },
+     base
+diff --git a/dist/node/index.d.ts b/dist/node/index.d.ts
+index 03aef894eb2dd55eda6ea9bd0af0e2e0d811c996..f3f4bb59c48e726c831c4d4c722be4b3fcee94a9 100644
+--- a/dist/node/index.d.ts
++++ b/dist/node/index.d.ts
+@@ -2037,11 +2037,11 @@ interface Options$1 {
+     lazyLoading?: boolean;
+ }
+ 
+-type ThemeOptions = ThemeRegistrationAny | BuiltinTheme | {
++export type ThemeOptions = ThemeRegistrationAny | BuiltinTheme | {
+     light: ThemeRegistrationAny | BuiltinTheme;
+     dark: ThemeRegistrationAny | BuiltinTheme;
+ };
+-interface MarkdownOptions extends Options$2 {
++export interface MarkdownOptions extends Options$2 {
+     /**
+      * Setup markdown-it instance before applying plugins
+      */

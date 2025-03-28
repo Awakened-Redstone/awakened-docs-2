@@ -1,0 +1,18 @@
+{
+  "autowhitelist": {
+    "name": "AutoWhitelist",
+    "path": "minecraft/autowhitelist",
+    "versions": {
+      "latest": "1.2.0",
+      "1.2.0": "1.2.0"
+    }
+  },
+  "default-components": {
+    "name": "Default Components",
+    "path": "minecraft/default-components",
+    "versions": {
+      "latest": "1.0.0",
+      "1.0.0": "1.0.0"
+    }
+  }
+}

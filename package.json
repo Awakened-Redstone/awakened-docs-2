@@ -1,0 +1,62 @@
+{
+  "name": "awakened-docs",
+  "version": "2.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "gen": "bun ./.vitepress/generateIconsFile.ts && bun  ./.vitepress/createOverlyLargeCssFile.ts",
+    "lint": "eslint . && prettier --check .",
+    "fix": "eslint . --fix && prettier --write .",
+    "dev": "vitepress dev --port 3000",
+    "build": "vitepress build",
+    "serve": "vitepress serve",
+    "docs:dev": "vitepress dev docs --port 3000",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress previe docsw"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@tailwindcss/vite": "^4.0.17",
+    "@types/bun": "^1.2.8",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/glob": "^8.1.0",
+    "@types/markdown-it-container": "^2.0.10",
+    "@types/prompts": "^2.4.9",
+    "@types/semver": "^7.7.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "^14.5.0",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.23.0",
+    "eslint-plugin-oxlint": "^0.16.3",
+    "eslint-plugin-vue": "^9.33.0",
+    "globals": "^16.0.0",
+    "gray-matter": "^4.0.3",
+    "jiti": "^2.4.2",
+    "markdown-it-container": "^4.0.0",
+    "oxlint": "^0.16.3",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "sass-embedded": "^1.86.0",
+    "tailwindcss": "^4.0.17",
+    "typescript-eslint": "^8.28.0",
+    "vite-svg-loader": "^5.1.0",
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.13"
+  },
+  "dependencies": {
+    "@vee-validate/zod": "^4.15.0",
+    "commander": "^13.1.0",
+    "glob": "^11.0.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-async": "^2.2.0",
+    "prompts": "^2.4.2",
+    "semver": "^7.7.1",
+    "vee-validate": "^4.15.0",
+    "zod": "^3.24.2"
+  },
+  "packageManager": "bun@latest",
+  "patchedDependencies": {
+    "vitepress@1.6.3": "patches/vitepress@1.6.3.patch"
+  }
+}
