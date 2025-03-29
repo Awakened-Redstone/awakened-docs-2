@@ -33,10 +33,4 @@ The mod sorts the modifications on the following order:
   - Files without the target field are applied last
 
 The order of application allows you to override components, for example, make all logs able to mine stone, and oak logs specifically able to mine obsidian
-A newer application has the power of overriding changes of past ones, so components on files without `target` have higher priority than the ones from wildcards 
-
-* TODO: target tag
-  * TODO: items
-  * TODO: wildcards
-  * TODO: tags
-* TODO: application order
+A newer application has the power of overriding changes of past ones, so components on files without `target` have higher priority than the ones from wildcards
