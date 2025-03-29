@@ -10,7 +10,7 @@
     "dev": "vitepress dev docs --port 3000",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
-    "preview": "vitepress previe docsw"
+    "preview": "vitepress preview docs"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
