@@ -81,12 +81,8 @@ Copy the Discord server/guild id of the server where you added the bot to
     On the app go to <code>Settings > App Settings > Advanced</code> and enable <code>Developer Mode</code>.
   </Callout>
   <ol class="!my-0 flex flex-col h-fit lg:text-lg xl:text-xl gap-2">
-    <li>Right click the server icon</li>
-    <li>Click <code>Reset Token</code></li>
-    <li>Click <code>Yes, do it!</code></li>
-    <li>Insert your 2FA if required</li>
-    <li>Click <code>Copy</code></li>
-    <li>Put the token in the mod config</li>
+    <li>Right-click the server icon</li>
+    <li>Click <code>Copy Server ID</code></li>
   </ol>
 </DetailedInstructions>
 
