@@ -150,7 +150,7 @@ Once I register while having `@Role 1` the server will announce:
 ```log
 [23:31:22] [AutoWhitelist] AwakenedRedstone joined the cool team
 ```
-Now, I got a new role, `@Role 2`
+Now, I got a new role, `@Role 2`  
 The server will follow with:
 ```log
 [23:33:53] [AutoWhitelist] AwakenedRedstone is no longer cool
