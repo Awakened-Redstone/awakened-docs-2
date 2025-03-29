@@ -3,3 +3,8 @@ name = "awakened-docs-2"
 compatibility_date = "2025-02-14"
 
 pages_build_output_dir = "docs/.vitepress/dist"
+
+[vars]
+SKIP_DEPENDENCY_INSTALL = true
+NODE_VERSION = "22"
+BUN_VERSION = "1.2.7"
