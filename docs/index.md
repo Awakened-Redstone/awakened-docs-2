@@ -6,11 +6,11 @@ hero:
   name: "Awakened Docs"
   text: "The documentation for my projects"
   tagline: Detailed documentation for my mods and projects
-#  actions:
+  actions:
+    - theme: alt
+      text: Legacy docs
+      link: https://docs-v1.awakenedredstone.com
 #    - theme: brand
-#      text: Markdown Examples
-#      link: /markdown-examples
-#    - theme: alt
 #      text: API Examples
 #      link: /api-examples
 
