@@ -1,6 +1,6 @@
 ---
 title: Targeting
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Tags, wildcards and custom targets
