@@ -95,6 +95,22 @@ Copy the Discord server/guild id of the server where you added the bot to
   "ephemeral_replies": true,
 ```
 
+### Adding the bot to your server
+
+Create the url to add the bot to a server and use it to add it to the server you plan to use it on
+
+<DetailedInstructions src="/assets/autowhitelist/tutorial/add_to_server.gif" title="How to add the bot">
+  <ol class="!my-0 flex flex-col h-fit lg:text-lg xl:text-xl gap-2">
+    <li>Select <code>OAuth2</code> on the sidebar</li>
+    <li>Select <code>bot</code> and <code>applications.commands</code> in <code>Scopes</code></li>
+    <li>Select <code>Send messages</code> in <code>Bot permission</code></li>
+    <li>Copy the generated URL</li>
+    <li>Open the URL in your browser</li>
+    <li>Select the Discord server the bot should work on</li>
+    <li>Click <code>Authorize</code></li>
+  </ol>
+</DetailedInstructions>
+
 ### Configuring the entries
 ::: tip
 [You can use the entry generator for an easier setup](configs/generator)
