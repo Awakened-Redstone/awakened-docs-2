@@ -1,4 +1,5 @@
 <template>
+  <h1 class="pb-4">Generate config with an entry</h1>
   <div class="bg-vp-bg-soft border-border mb-4 rounded-md border p-4">
     <Field type="text" label="If user has" name="roles">
       <template #default="{ value, updateValue }">
@@ -41,17 +42,18 @@
     </div>
   </div>
 
-  <Markdown>{{ output }}</Markdown>
+  <Markdown ref="markdownRef" @markdown-updated="scrollMarkdown" class="limit-height">{{ output }}</Markdown>
 </template>
 
 <script setup lang="ts">
+import { data } from './sample-config.data.ts'
 import DropdownSelect from "@component/DropdownSelect.vue";
 import Field from "@component/Field.vue";
 import Markdown from "@component/Markdown.vue";
 import { toTypedSchema } from "@vee-validate/zod";
 import { useForm } from "vee-validate";
 import { z } from "zod";
-import { computed, ref, watch } from "vue";
+import { computed, ref, useTemplateRef, watch } from "vue";
 import type { Ref } from "vue";
 
 const formSchema = z.object({
@@ -102,6 +104,33 @@ const form = useForm({
 });
 
 const actionType: Ref<ActionType> = ref(types[0]);
+let positioned = false;
+const markdown = useTemplateRef('markdownRef');
+
+function scrollMarkdown() {
+  //if (positioned) return;
+
+  const pre: HTMLPreElement = markdown.value?.$el.children[0].children[2];
+  const focusElements = pre.getElementsByClassName("has-focus");
+  if (focusElements.length > 0) {
+    positioned = true;
+    const element = focusElements[0] as HTMLElement
+    const code = pre.children[0]
+    const arr: Element[] = [];
+    for (let i = 0; i < code.children.length; i++) {
+      arr.push(code.children[i]);
+    }
+
+    const index = arr.findIndex(value => value === element)
+
+    const comment = code.children[index - 2] as HTMLElement;
+
+    pre.scrollTo({
+      top: comment.offsetTop - comment.offsetHeight / 3,
+      behavior: "smooth"
+    });
+  }
+}
 
 watch(actionType, () => {
   form.validate();
@@ -123,8 +152,26 @@ const output: any = computed(() => {
     output["execute"][extra] = values[extra] ?? "";
   }
 
-  return "```json\n" + JSON.stringify(output, undefined, 2) + "\n```";
+  const stringified = JSON.stringify(output, undefined, 2);
+  const lines = stringified.split("\n")
+  let entriesJsonString = "";
+  lines.forEach((line, index) => {
+    entriesJsonString += line + " //[!code focus]";
+    if (index < lines.length - 1) {
+      entriesJsonString += "\n    ";
+    }
+  })
+
+  return (
+    "```json\n" +
+    format(data[0], entriesJsonString) +
+    "\n```"
+  );
 });
+
+function format(str: string, ...args: string[]) {
+  return str.replace(/%s/g, () => args.shift() || "");
+}
 </script>
 
 <style scoped>
@@ -154,5 +201,10 @@ p.text {
 
 .warning {
   color: var(--vp-c-warning-1);
+}
+</style>
+<style>
+.limit-height > div > pre {
+  max-height: 24rem;
 }
 </style>

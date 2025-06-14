@@ -1,6 +1,16 @@
 <template>
   <div class="!space-y-2">
-    <label :class="`text${errorClass}`">{{ label }}</label>
+    <label
+      :class="{
+        text: true,
+        error: errors.length > 0
+      }"
+    >
+      <span v-if="errors.length > 0" class="icon">
+        <OctogonAlertIcon />
+      </span>
+      {{ label }}
+    </label>
     <slot :value="value" :updateValue="updateValue">
       <input
         :value="value"
@@ -8,13 +18,15 @@
         :placeholder="placeholder"
       />
     </slot>
-    <p class="text no-margin error" v-if="errors.length > 0">{{ errors[0] }}</p>
+    <p class="text no-margin error" v-for="error in errors" :key="error">
+      {{ error }}
+    </p>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useField } from "vee-validate";
-import { computed } from "vue";
+import { OctogonAlertIcon } from "@assets";
 
 const props = defineProps({
   name: {
@@ -39,10 +51,6 @@ const { value, setValue, errors } = useField(() => props.name, undefined, {
   validateOnMount: true,
   initialValue: ""
 });
-
-const errorClass = computed(() => {
-  return errors.value.length > 0 ? " error" : ""
-})
 </script>
 
 <style scoped>
@@ -63,10 +71,23 @@ label {
 }
 
 .text {
-  @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70
+  @apply text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  display: flex;
+}
+
+.icon {
+  align-items: center;
+  line-height: 1;
+
+  & > svg {
+    @apply h-4 w-4;
+    vertical-align: text-bottom;
+    margin-right: 0.25rem;
+    display: inline-block;
+  }
 }
 
 .error {
-  @apply text-vp-danger-2
+  @apply text-vp-danger-2;
 }
 </style>
