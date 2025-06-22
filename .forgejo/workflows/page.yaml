@@ -19,7 +19,7 @@ jobs:
           bun --bun run build
           cp -r docs/.vitepress/dist /tmp/dist
 
-          git -C switch -C pages
+          git switch -C pages
           git clean -d -q -X
           cp -r /tmp/dist/* .
           git add .
