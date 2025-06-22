@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: docker
+    steps:
+      - uses: "composite"
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - shell: bash
+        run: |
+          git clone https://placeholder:${{ secrets.PAGES_TOKEN }}@kitsunes.dev/LunaFox/docs-2 /tmp/docs
+          git config user.email "fox@trans.fish"; git config user.name "LunaFox-CI"
+
+          cd /tmp/docs
+          bun install --frozen-lockfile
+          bun --bun run build
+          cp dist /tmp/dist
+
+          git switch pages
+          cp /tmp/dist .
+          git add .
+
+          git diff-index --quiet HEAD || git commit -m 'ci: Deploy' -a
+          git push origin pages
