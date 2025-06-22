@@ -17,7 +17,7 @@ jobs:
           git config user.email "fox@trans.fish"; git config user.name "LunaFox-CI"
           bun install --frozen-lockfile
           bun --bun run build
-          cp dist /tmp/dist
+          cp docs/.vitepress/dist /tmp/dist
 
           git switch pages
           cp /tmp/dist .
