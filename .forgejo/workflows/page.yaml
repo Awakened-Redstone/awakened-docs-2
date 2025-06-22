@@ -20,7 +20,7 @@ jobs:
           cp -r docs/.vitepress/dist /tmp/dist
 
           git switch -C pages
-          git clean -d -q -X
+          git clean -d -q -X -f
           cp -r /tmp/dist/* .
           git add .
 
