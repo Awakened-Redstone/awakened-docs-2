@@ -11,15 +11,16 @@ jobs:
           bun-version: latest
       - shell: bash
         run: |
-          git clone https://placeholder:${{ secrets.PAGES_TOKEN }}@kitsunes.dev/LunaFox/docs-2 /tmp/docs
+          git clone -b main https://placeholder:${{ secrets.PAGES_TOKEN }}@kitsunes.dev/LunaFox/docs-2 /tmp/docs
+          git clone -b pages https://placeholder:${{ secrets.PAGES_TOKEN }}@kitsunes.dev/LunaFox/docs-2 /tmp/docs-dist
+
+          git -C /tmp/docs config user.email "fox@trans.fish"
+          git -C /tmp/docs config user.name "LunaFox-CI"
+
+          git -C /tmp/docs-dist config user.email "fox@trans.fish"
+          git -C /tmp/docs-dist config user.name "LunaFox-CI"
 
           cd /tmp/docs
-          git config user.email "fox@trans.fish"; git config user.name "LunaFox-CI"
-
-          mkdir /tmp/docs-dist
-          cp -r /tmp/docs/.git /tmp/docs-dist/.git
-          git -C /tmp/docs-dist switch -C pages
-
           bun install --frozen-lockfile
           bun --bun run build
           cp -r docs/.vitepress/dist /tmp/dist
