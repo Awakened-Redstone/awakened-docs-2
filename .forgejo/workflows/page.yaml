@@ -6,7 +6,6 @@ jobs:
   build:
     runs-on: docker
     steps:
-      - uses: "composite"
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
