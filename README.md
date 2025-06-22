@@ -1,15 +1,59 @@
-# awakened-docs
+# docs-2
 
-To install dependencies:
+A place for all my documentations
+
+This project requires [bun](https://bun.sh/) to develop and deploy  
+It also has patches and modifications on top of [VitePress](https://vitepress.dev/)
+
+All docs must have an entry on `docs.json`  
+It is used to generate the side bar and top nav bar.  
+A doc must have a unique id as it's key and it's name, path (relative to docs) and initial versions provided.  
+`versions` should be updated using the script.  
+
+## Setup:
 
 ```bash
 bun install
 ```
 
-To run:
+## Running:
+
+### Dev
 
 ```bash
-bun run 
+bun --bun run dev
+```
+The default port is `3000`
+
+### Build
+
+```bash
+bun --bun run build
+```
+The output will be at `docs/.vitepress/dist`
+
+## Creating a new version
+```bash
+bun --bun ./.vitepress/newVersion.ts
 ```
 
-This project was created using `bun init` in bun v1.2.3. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+## Updating robots.txt
+```bash
+bun --bun ./.vitepress/genRobotsTxt.ts
+```
+
+## Updating robots.txt
+```bash
+bun --bun ./.vitepress/genRobotsTxt.ts
+```
+
+## Updating icons .ts files
+```bash
+bun --bun ./.vitepress/generateIconsFile.ts
+```
+
+## Making tailwind work with new pages
+```bash
+bun --bun ./.vitepress/createOverlyLargeCssFile.ts
+```
+
