@@ -58,7 +58,7 @@ const docsRef = _docs as DocsData;
 
   docs.versions.latest = newVersion
   docs.versions[newVersion] = versionName(newVersion)
-  fs.writeFileSync("./docs2.json", JSON.stringify(docsRef, null, 2))
+  fs.writeFileSync("./docs.json", JSON.stringify(docsRef, null, 2))
 })()
 
 function versionName(version: string) {
