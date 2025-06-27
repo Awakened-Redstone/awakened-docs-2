@@ -3,10 +3,6 @@ title: Custom messages
 sidebar_position: 1
 ---
 
-:::tip
-You can generate a datapack with `/autowhitelist create-translations-datapack`
-:::
-
 :::info
 Basic JSON knowledge is required
 :::
