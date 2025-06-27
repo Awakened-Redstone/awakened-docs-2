@@ -1,9 +1,20 @@
+diff --git a/node_modules/vitepress/.bun-tag-661016456e4524b0 b/.bun-tag-661016456e4524b0
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/node_modules/vitepress/.bun-tag-8d0de57aaef1c69a b/.bun-tag-8d0de57aaef1c69a
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
 diff --git a/node_modules/vitepress/.bun-tag-af03a2a8f93adfc0 b/.bun-tag-af03a2a8f93adfc0
 new file mode 100644
 index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/bin/vitepress.js b/bin/vitepress.js
+index 7c50ec907434c2d07442f29d94104f24e2c4edf8..7bd90a54e2a72753bd11026318d1e51e6cdf5733 100755
+--- a/bin/vitepress.js
++++ b/bin/vitepress.js
+@@ -1,2 +1,2 @@
+-#!/usr/bin/env node
++#!/usr/bin/env bun
+ import('../dist/node/cli.js')
 diff --git a/dist/client/theme-default/styles/components/vp-doc.css b/dist/client/theme-default/styles/components/vp-doc.css
 index 8999118418b53f9e56667d0d84f98bfdce1930d8..2974047a17928c650771b6ac7678339f5696a2a6 100644
 --- a/dist/client/theme-default/styles/components/vp-doc.css

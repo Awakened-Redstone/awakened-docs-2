@@ -21,39 +21,39 @@ bun install
 ### Dev
 
 ```bash
-bun --bun run dev
+bun run dev
 ```
 The default port is `3000`
 
 ### Build
 
 ```bash
-bun --bun run build
+bun run build
 ```
 The output will be at `docs/.vitepress/dist`
 
 ## Creating a new version
 ```bash
-bun --bun ./.vitepress/newVersion.ts
+bun ./.vitepress/newVersion.ts
 ```
 
 ## Updating robots.txt
 ```bash
-bun --bun ./.vitepress/genRobotsTxt.ts
+bun ./.vitepress/genRobotsTxt.ts
 ```
 
 ## Updating robots.txt
 ```bash
-bun --bun ./.vitepress/genRobotsTxt.ts
+bun ./.vitepress/genRobotsTxt.ts
 ```
 
 ## Updating icons .ts files
 ```bash
-bun --bun ./.vitepress/generateIconsFile.ts
+bun ./.vitepress/generateIconsFile.ts
 ```
 
 ## Making tailwind work with new pages
 ```bash
-bun --bun ./.vitepress/createOverlyLargeCssFile.ts
+bun ./.vitepress/createOverlyLargeCssFile.ts
 ```
 
